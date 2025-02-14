@@ -10,7 +10,25 @@ namespace CurrencyConverter.Controllers
         [HttpGet("{amount}/{from}/{to}/{rate}")]
         public IActionResult Get(double amount, string from, string to, double rate)
         {
-            return Ok(new ExchangeService().Exchange(amount, from, to, rate));
+            switch (to.ToLower())
+            {
+                case "brl":
+                    {
+                        return Ok(new ExchangeService(new BrazilCurrencyService()).Res(amount, from, to, rate));
+                    }
+                case "usd":
+                    {
+                        return Ok(new ExchangeService(new EUACurrencyService()).Res(amount, from, to, rate));
+                    }
+                case "eur":
+                    {
+                        return Ok(new ExchangeService(new EuropeCurrencyService()).Res(amount, from, to, rate));
+                    }
+                default:
+                    {
+                        return NotFound();
+                    }
+            }
         }
     }
 }
