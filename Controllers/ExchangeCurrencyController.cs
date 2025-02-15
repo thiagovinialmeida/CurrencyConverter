@@ -7,22 +7,22 @@ namespace CurrencyConverter.Controllers
     [ApiController]
     public class ExchangeCurrencyController : ControllerBase
     {
-        [HttpGet("{amount}/{from}/{to}/{rate}")]
-        public IActionResult Get(double amount, string from, string to, double rate)
+        [HttpGet("{amount}/{from}/{to}")]
+        public IActionResult Get(double amount, string from, string to)
         {
             switch (to.ToLower())
             {
                 case "brl":
                     {
-                        return Ok(new ExchangeService(new BrazilCurrencyService()).Res(amount, from, to, rate));
+                        return Ok(new ExchangeService(new BrazilCurrencyService()).Res(amount, from, to));
                     }
                 case "usd":
                     {
-                        return Ok(new ExchangeService(new EUACurrencyService()).Res(amount, from, to, rate));
+                        return Ok(new ExchangeService(new EUACurrencyService()).Res(amount, from, to));
                     }
                 case "eur":
                     {
-                        return Ok(new ExchangeService(new EuropeCurrencyService()).Res(amount, from, to, rate));
+                        return Ok(new ExchangeService(new EuropeCurrencyService()).Res(amount, from,to));
                     }
                 default:
                     {

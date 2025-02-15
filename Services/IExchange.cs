@@ -4,6 +4,6 @@ namespace CurrencyConverter.Services
 {
     public interface IExchange
     {
-        CurrencyModel Exchange(Atributes atributes);
+        CurrencyModel Exchange(Task<Atributes> atributes);
     }
 }
