@@ -1,7 +1,7 @@
-﻿using CurrencyConverter.Services;
+﻿using Project.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CurrencyConverter.Controllers
+namespace Project.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

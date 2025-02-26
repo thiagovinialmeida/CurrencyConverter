@@ -1,4 +1,4 @@
-﻿namespace CurrencyConverter.Models
+﻿namespace Project.Models
 {
     public class Atributes
     {

@@ -1,6 +1,6 @@
-﻿using CurrencyConverter.Models;
-using CurrencyConverter.Repository;
-namespace CurrencyConverter.Services
+﻿using Project.Models;
+using Project.Repositories;
+namespace Project.Services
 {
     public class ExchangeService
     {
@@ -12,7 +12,7 @@ namespace CurrencyConverter.Services
 
         public CurrencyModel Res(double amount, string from, string to)
         {
-            return _exchange.Exchange(new RateService().GetRate(to+"-"+from, amount));
+            return _exchange.Exchange(new RateRepository().GetRate(to+"-"+from, amount));
         }
     }
 }

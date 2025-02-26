@@ -1,7 +1,7 @@
-using CurrencyConverter.Models;
-namespace CurrencyConverter.Repository
+using Project.Models;
+namespace Project.Repositories
 {
-    public class RateService
+    public class RateRepository
     {
         static HttpClient _client = new HttpClient();
         public async Task<Atributes> GetRate(string currency, double amount)

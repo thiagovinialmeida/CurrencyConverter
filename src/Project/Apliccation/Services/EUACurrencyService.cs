@@ -1,8 +1,8 @@
-﻿using CurrencyConverter.Models;
+﻿using Project.Models;
 
-namespace CurrencyConverter.Services
+namespace Project.Services
 {
-    public class BrazilCurrencyService : IExchange
+    public class EUACurrencyService : IExchange
     {
         public CurrencyModel Exchange(Task<Atributes> atributes)
         {
